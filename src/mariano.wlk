@@ -52,4 +52,15 @@ object mariano {
 		const gustosDeseadas = gustosDeseados.asSet()
 		return gustosDeseadas.difference(self.sabores())
 	}
+	
+	method gastoEn(sabor){
+		return self.golosinasDeSabor(sabor).sum({dulce =>dulce.precio()})
+	}
+	
+	method saborMasPopular(){
+		return self.sabores().max({ sabor => self.cuantasDeSabor(sabor.sabor() )})
+	}
+	method cuantasDeSabor(unSabor){
+		return self.golosinasDeSabor(unSabor).size()
+	}
 }
