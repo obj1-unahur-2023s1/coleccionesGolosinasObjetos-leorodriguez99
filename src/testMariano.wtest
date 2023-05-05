@@ -1,6 +1,15 @@
+import golosinas.*
+import mariano.*
 
-test "testX" {
-
-	assert.that(true)
-
+test "mariano compra chocolatin, caramelo y bombon" {
+  mariano.comprar(chocolatin)
+  mariano.comprar(caramelo)
+  mariano.comprar(bombon)
+  chocolatin.gramos(40)
+	assert.equals(mariano.cantidadDeGolosinas(),3)
+    assert.that(mariano.tieneLaGolosina(caramelo))
+    assert.that(mariano.hayGolosinaSinTACC())
+    assert.notThat(mariano.preciosCuidados())
+    
+    
 }
